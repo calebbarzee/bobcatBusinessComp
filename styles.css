@@ -3,9 +3,30 @@
 
 /* General styles */
 body {
+    margin: 0 10%;
     font-family: 'Roboto Condensed', sans-serif;
     line-height: 1.5;
     color: #333;
+    background-color: #f4f4f4; /* Light gray background */
+}
+
+/* Dark Mode styles */
+@media (prefers-color-scheme: dark) {
+    body {
+        color: #f4f4f4;
+        background-color: #333;
+    }
+    section a {
+        color: #58a6ff;
+    }
+    .card {
+        background-color: #444;
+        border-color: #555;
+        color: #f4f4f4;
+    }
+    section h2 {
+        border-color: #555;
+    }
 }
 
 /* Header styles */
@@ -14,6 +35,10 @@ header h1 {
     font-weight: 700;
     text-align: center;
     margin: 20px 0;
+    background-color: #ff4d4d; /* Red background */
+    padding: 10px;
+    color: #fff;
+    border-radius: 8px;
 }
 
 /* Section styles */
@@ -68,139 +93,37 @@ footer p {
     font-size: 1em;
 }
 
-
-/*------------------------------------------------------------------------------------------*/
-/* 2. Layout Elements */
-/*------------------------------------------------------------------------------------------*/
-
-section {
-    clear: both;
-    overflow: hidden;
-}
-
-/* Rows and Columns */
-
-.row {
-    max-width: 1245px;
-    margin: 0 auto;
-    padding: 75px 0;
-    position: relative;
-}
-
-.no-padding-bottom .row, .no-padding-bottom div, .no-padding-bottom.row {
-    padding-bottom: 0;
-}
-
-.no-padding-top.row, .no-padding-top div {
-    padding-top: 0;
-}
-
-.big-padding-top {
-    padding-top: 75px !important;
-}
-
-.big-padding-bottom {
-    padding-bottom: 85px !important;
-}
-
-[class*='col-'] {
-    float: left;
-    padding: 20px;
-}
-
-.clearfix:after {
-    content: "";
-    display: table;
-    clear: both;
-}
-
-/* --------- 2.1 Header --------- */
-
-header {
-    height: 71px !important;
-    overflow: visible;
-    z-index: 9999;
-    width: 100%;
-    position: absolute !important;
-}
-
-header .row {
+.cardContainer {
+    list-style-type: none;
     padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
 }
 
-/* --------- 2.2 Logo ---------- */
-
-#site-logo {
-    float: left;
-    height: 71px;
-    line-height: 66px;
-    margin-right: 15px;
+/* Mobile responsive design */
+@media (max-width: 768px) {
+    .cardContainer {
+        grid-template-columns: 1fr; /* Single column for smaller screens */
+    }
 }
 
-#site-logo img {
-    max-height: 22px;
-    vertical-align: middle;
-    margin-right: 15px;
+.card {
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    transition: box-shadow 0.3s ease;
 }
 
-/* --------- 2.3 Navigation ---------- */
-
-nav {
-    font-size: 13px;
+.card:hover {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
 }
 
-nav ul {
-    text-transform: uppercase;
-}
-
-nav a {
-    height: 71px;
-    line-height: 71px;
+.card strong {
     display: block;
-    padding: 0 10px;
-}
-
-nav a:hover {
-    opacity: 0.6;
-}
-
-/* --------- 2.4 Responsive Nav Styling (Adapted for future use) --------- */
-
-#nav-trigger {
-    display: none;
-    text-align: right;
-}
-
-#nav-trigger span {
-    display: inline-block;
-    width: 38px;
-    height: 71px;
-    color: #111;
-    cursor: pointer;
-    text-transform: uppercase;
-    font-size: 22px;
-    text-align: center;
-    border-top-right-radius: 5px;
-    border-top-left-radius: 5px;
-    -webkit-transition: all 0.3s ease-out;
-    -moz-transition: all 0.3s ease-out;
-    -o-transition: all 0.3s ease-out;
-    transition: all 0.3s ease-out;
-}
-
-/* Responsive nav icon: Hamburger and Close */
-#nav-trigger span:after {
-    font-family: "fontAwesome";
-    display: inline-block;
-    width: 38px;
-    height: 71px;
-    line-height: 75px;
-    text-align: center;
-    content: "\f0c9";
-    border-top-right-radius: 5px;
-    border-top-left-radius: 5px;
-}
-
-#nav-trigger span.open:after {
-    content: "\f00d";
+    margin-bottom: 10px;
+    color: #333;
 }
