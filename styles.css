@@ -1,3 +1,74 @@
+/* Importing Roboto Condensed font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&display=swap');
+
+/* General styles */
+body {
+    font-family: 'Roboto Condensed', sans-serif;
+    line-height: 1.5;
+    color: #333;
+}
+
+/* Header styles */
+header h1 {
+    font-size: 2.5em;
+    font-weight: 700;
+    text-align: center;
+    margin: 20px 0;
+}
+
+/* Section styles */
+section {
+    margin-bottom: 30px;
+}
+
+section h2 {
+    font-size: 1.75em;
+    font-weight: 700;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 5px;
+}
+
+section p {
+    font-size: 1em;
+    margin-bottom: 10px;
+}
+
+section ol, section ul {
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+
+section li {
+    font-size: 1em;
+    margin-bottom: 10px;
+}
+
+section li strong {
+    font-weight: 700;
+}
+
+section a {
+    color: #007BFF;
+    text-decoration: none;
+}
+
+section a:hover {
+    text-decoration: underline;
+}
+
+/* Footer styles */
+footer {
+    background-color: #f9f9f9;
+    padding: 20px 0;
+    text-align: center;
+}
+
+footer p {
+    font-size: 1em;
+}
+
+
 /*------------------------------------------------------------------------------------------*/
 /* 2. Layout Elements */
 /*------------------------------------------------------------------------------------------*/
